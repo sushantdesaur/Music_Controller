@@ -1,5 +1,3 @@
-from django.shortcuts import render
-from django.http import HttpResponse
 from rest_framework import generics, status
 from .serializers import RoomSerializer, CreateRoomSerializer
 from .models import Room
