@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 
 export default function Room(props) {
   const initialState = {
-    votesToSKip: 2,
+    votesToSkip: 2,
     guestCanPause: false,
     isHost: false,
   };
@@ -17,7 +17,7 @@ export default function Room(props) {
       .then((data) => {
         setRoomData({
           ...roomData,
-          votesToSKip: data.votes_to_skip,
+          votesToSkip: data.votes_to_skip,
           guestCanPause: data.guest_can_pause,
           isHost: data.is_host,
         });
@@ -26,7 +26,7 @@ export default function Room(props) {
   return (
     <div>
       <h3>{roomCode}</h3>
-      <p>Votes: {roomData.votesToSKip}</p>
+      <p>Votes: {roomData.votesToSkip}</p>
       <p>Guest: {roomData.guestCanPause.toString()}</p>
       <p>Host: {roomData.isHost.toString()}</p>
     </div>
